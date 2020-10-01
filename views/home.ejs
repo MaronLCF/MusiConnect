@@ -95,7 +95,7 @@
                 response.posts.forEach(function (post) {
                   var strDate = post.createdAt;
 
-                  postCard.append('<div class="central-meta item" id="post-card"><div class= "user-post"><div class="friend-info"><div class="friend-name"><ins><a href="/profile/:'+ post.authorID + '" title="">' + post.author + ' </a></ins>\
+                  postCard.append('<div class="central-meta item" id="post-card"><div class= "user-post"><div class="friend-info"><div class="friend-name"><ins><a href="/profile/'+ post.authorID + '" title="">' + post.author + ' </a></ins>\
               <span>' + strDate.substring(0, 10) + '</div><div class= "post-meta"><img src="/post-photo/' + post.photo + '" alt="" />\
                 <div class="audio">\
                     <audio id="music_'+ n + '" controls preload="true" class="musicname" style="width: 100%;">\
