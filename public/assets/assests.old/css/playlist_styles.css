@@ -1,0 +1,29 @@
+#playlist-name {
+  display: inline-block;
+}
+
+#playlist-creator {
+  display: block;
+}
+
+#playlist {
+  margin: 10px auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  background: #aacc00;
+}
+
+.container.playlist-container {
+  background: #80b918;
+}
+
+.playlist-name {
+  display: block;
+}
+
+.playlist-creator {
+  display: block;
+  font-size: 13px;
+}
+

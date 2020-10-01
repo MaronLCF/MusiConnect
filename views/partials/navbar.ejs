@@ -1,0 +1,43 @@
+<div class="topbar stick">
+  <div class="logo">
+    <a title="" href="/home" style
+      ><img
+        src="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png"
+        style="height: 50px; width: 50px"
+      /><span style="margin-left: 10px">MusiConnect</span></a
+    >
+  </div>
+
+  <div class="top-area">
+    <ul class="main-menu">
+      <li>
+        <a href="/home" title="" style="margin-left: -25px">Home</a>
+      </li>
+      <li>
+        <a href="/profile" title="">Profile</a>
+      </li>
+      <li>
+        <a href="/playlists" title="">playlists</a>
+      </li>
+    </ul>
+    <ul class="">
+      <li>
+        <form method="post" class="form-inline ml-auto" id="search-form" action="search">
+          <div class="md-form my-0">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="search-input" name="search"/>
+          </div>
+          <button class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit" id="search-button">Search</button>
+        </form>
+      </li>
+    </ul>
+    <div class="user-img" >
+      <img src="/photo/<%=user.id%>" alt="" style="height: 50px;"/>
+    </div>
+    <ul>
+      <li>
+        <a href="/logout" title="">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- topbar -->

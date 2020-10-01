@@ -1,0 +1,111 @@
+.text-center.post-action {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.post-username {
+  margin-bottom: 0px;
+  margin-top: 26px;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-date {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  font-size: 11px;
+}
+
+.other-person-profile-image {
+  height: 65px;
+  width: 65px;
+  margin: 0;
+  margin-top: 25px;
+  margin-right: 0;
+  margin-left: 40px;
+  border-radius: 50px;
+}
+
+#image-create-post-user-image {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  margin-top: -145px;
+  margin-right: 34px;
+  margin-left: 35px;
+}
+
+.post-image {
+  height: 100%;
+  width: 100%;
+}
+
+#write-post-text-area {
+  margin-right: -10px;
+  width: 700px;
+  height: 100px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  margin-left: 4px;
+  background-color: rgb(19, 170, 255);
+  color: rgb(255, 255, 255);
+  height: 25px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-bottom: 6px;
+  margin-right: 65px;
+  margin-top: 5px;
+  width: 83px;
+}
+
+.profile-picture {
+  width: 300px;
+  height: 300px;
+  margin-right: 0px;
+  margin-left: 50px;
+  margin-bottom: 0px;
+  border: 10px solid rgb(238, 238, 238);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-top: -217px;
+}
+
+.text-center.username {
+  font-size: 25px;
+  margin-top: 25px;
+  width: 100%;
+  height: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.btn.btn-primary.text-center.go-to-action-profile {
+  margin-top: 30px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-style: none;
+  border-color: rgb(0, 0, 0);
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.favorite-playlists-image {
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  border-radius: 50px;
+}
+
+.small,
+small {
+  margin-left: 15px;
+}

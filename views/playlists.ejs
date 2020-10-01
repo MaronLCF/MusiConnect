@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>MusiConnect</title>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png" type="image/png" sizes="16x16" />
+
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/color.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/song-card.css" />
+  </head>
+
+  <body>
+<%- include("./partials/navbar") %>
+      <!-- top area -->
+      <div class="gap gray-bg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3">
+              
+            </div>
+            <div class="col-lg-6">
+              <div class="central-meta">
+                  <div id="post-cards"></div>
+              </div>
+            </div>
+            <!-- centerl meta -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+    <script>
+      $(function () {
+          //GET AND READ POSTS
+          $(document).ready(function () {
+            $.ajax({
+              url: '/load-playlist',
+              contentType: 'application/json',
+              success: function (response) {
+                var postCard = $('#post-cards');
+                console.log(response.user[0].playlists)
+                postCard.html("");
+
+
+                var n = 0;
+                response.user[0].playlists.forEach(function (post) {
+                  var strDate = post.createdAt;
+
+                  postCard.append('<div class="central-meta item" id="' + post._id + '"><div class= "user-post"><div class="friend-info"><div class="friend-name"><ins><a href="time-line.html" title="">' + post.author + ' </a></ins>\
+              <span></div><div class= "post-meta"><img src="/post-photo/' + post.photo + '" alt="" />\
+                <div class="audio">\
+                    <audio id="music_'+ n + '" controls preload="true" class="musicname" style="width: 100%;">\
+                      <source data-id="' + post.music + '" src="/post-music/' + post.music + '"/>\
+                    </audio>\
+                    <div class="we-video-info"><div class="description"><p><a href="#" title="" style="font-size: large; margin-right: 10px;">' + post.title + '</a>' + post.description + '</p></div ><ul><li><span class="dislike" data-toggle="tooltip" title="Add to Playlist"><i  data-id="' + post._id + '" class="removePlaylist ti-close"></i><ins style="margin-left: 10px;">Remove from Playlist</ins></span></li></ul ></div ></div ></div >'
+                  )
+                  n++
+                })
+
+                $('.removePlaylist').click(function () {
+                  var postID = $(this).attr("data-id");
+                  var post = $('#'+postID);
+
+                  $.ajax({
+                    url: '/delete-playlist',
+                    method: "POST",
+                    contentType: 'application/json',
+                    data: JSON.stringify({ postID: postID }),
+                    success: function (data) {
+                      post.remove();
+                      alert(data);
+                    }
+                  })
+                });
+                
+              }
+            })
+          })
+
+          
+        })
+        
+        
+
+
+    </script>
+  </body>
+</html>

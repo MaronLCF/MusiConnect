@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>MusiConnect</title>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png" type="image/png" sizes="16x16" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/color.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/song-card.css" />
+  </head>
+  <body id="body">
+    <!--<div class="se-pre-con"></div>-->
+    <div class="theme-layout">
+      <!-- responsive header -->
+      <%- include("./partials/navbar") %>
+      <!-- topbar -->
+
+      <section>
+        <div class="gap gray-bg">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row" id="page-contents">
+                  <div class="col-lg-3">
+                    <aside class="sidebar static">
+
+                      <!-- who's following -->
+                    </aside>
+                  </div>
+                  <!-- sidebar -->
+
+                  <div class="col-lg-6">
+                    <div class="central-meta">
+                      <div class="new-postbox">
+                        <figure>
+                          <img src="/photo/<%=user._id%>"  alt="" />
+                        </figure>
+                        <div class="newpst-input">
+                          <%- include("./partials/create-post") %> 
+                        </div>
+                      </div>
+                    </div>
+                    <!-- add post new box -->
+                    <div id="post-cards"></div>
+                    
+
+                    
+                  </div>
+                  <!-- centerl meta -->
+                  <div class="col-lg-3">
+                    <aside class="sidebar static">
+        
+                      <!-- favorite playlist sidebar -->
+                    </aside>
+                  </div>
+                  <!-- sidebar -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="assets/js/main.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+<%- include("./partials/search-script") %>
+
+    
+    <script>
+
+      
+          //GET AND READ POSTS
+          $(document).ready(function () {
+            $.ajax({
+              url:'/load-posts',
+              contentType: 'application/json',
+              success: function(response){
+                var postCard = $('#post-cards');
+
+                postCard.html("");
+
+                var n = 0;
+                response.posts.forEach(function (post) {
+                  var strDate = post.createdAt;
+
+                  postCard.append('<div class="central-meta item" id="post-card"><div class= "user-post"><div class="friend-info"><div class="friend-name"><ins><a href="time-line.html" title="">' + post.author + ' </a></ins>\
+              <span>' + strDate.substring(0, 10) + '</div><div class= "post-meta"><img src="/post-photo/' + post.photo + '" alt="" />\
+                <div class="audio">\
+                    <audio id="music_'+ n + '" controls preload="true" class="musicname" style="width: 100%;">\
+                      <source data-id="' + post.musicLink + '"src="/post-music/' + post.musicLink + '"/>\
+                    </audio>\ <div class="we-video-info"><div class="description"><p><a href="#" title="" style="font-size: large; margin-right: 10px;">' + post.title + '</a>' + post.description + '</p></div ><ul><li><span class="dislike" data-toggle="tooltip" title="Add to Playlist"><i  data-id="' + post._id + '" data-author="' + post.author + '" data-photo="' + post.photo + '" data-musicLink="' + post.musicLink + '" data-title="' + post.title + '" data-description="' + post.description + '" class="addPlaylist ti-plus"></i><ins>Add to Playlist</ins></span></li></ul ></div ></div ></div >'
+                  )
+                  n++
+                })
+
+                $(".likePost").click(function () {
+                  $(this).toggleClass('far fa-heart');
+                  $(this).toggleClass('fas fa-heart');
+                });
+
+
+
+                $('.addPlaylist').click(function () {
+                  console.log("yes")
+                  var postID = $(this).attr("data-id");
+                  var author = $(this).attr("data-author");
+                  var photo = $(this).attr("data-photo");
+                  var music = $(this).attr("data-musicLink");
+                  var title = $(this).attr("data-title");
+                  var description = $(this).attr("data-description");
+
+                  $.ajax({
+                    url: '/add-to-Playlist',
+                    method: "POST",
+                    contentType: 'application/json',
+                    data: JSON.stringify({ postID: postID, author: author, photo: photo, music: music, title: title, description: description}),
+                    success: function (data) {
+                      alert(data);
+                    }
+                  })
+                });
+                
+
+              }
+            })
+          })
+
+    </script>
+    <!-- <script src="assets/js/song-card.js"></script> -->
+
+    
+  </body>
+</html>

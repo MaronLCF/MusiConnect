@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>MusiConnect_Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/home_Navigation-with-Search.css" />
+    <link rel="stylesheet" href="/assets/css/home_styles.css" />
+    <link rel="stylesheet" href="assets/css/search_styles.css" />
+  </head>
+
+  <body>
+    <%- include("./partials/navbar") %>
+    <section id="search-container" style="height: 100vh">
+      <div>
+        <ul
+          class="nav nav-tabs d-flex justify-content-center"
+          style="text-align: center"
+        >
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              role="tab"
+              data-toggle="tab"
+              href="#tab-1"
+              style="font-size: 20px"
+              >Person</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              role="tab"
+              data-toggle="tab"
+              href="#tab-2"
+              style="font-size: 20px"
+              >Tags</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              role="tab"
+              data-toggle="tab"
+              class="nav-link"
+              href="#tab-3"
+              style="font-size: 20px"
+              >Title</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" role="tabpanel" id="tab-1">
+            <section
+              class="results-section"
+              style="
+                height: 100vh;
+                margin-right: 100px;
+                margin-left: 100px;
+                padding: 0px 250px;
+              "
+            >
+              <div
+                class="container d-flex justify-content-left profile-container"
+                style="
+                  height: 100px;
+                  background: #f4f4f4;
+                  padding: 0px;
+                  margin: 0px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  width: 100%;
+                "
+              >
+                <img
+                  class="search-profile-picture"
+                  style="
+                    margin: 10px;
+                    text-align: left;
+                    width: 80px;
+                    height: 80px;
+                  "
+                  src="https://pm1.narvii.com/7490/46c15342417e81b2d5ef9ce1444df49760416999r1-1242-1276v2_00.jpg"
+                /><a
+                  class="search-profile-name"
+                  href="#"
+                  style="margin: 30px; font-size: 30px"
+                  >Shinobu Kocho</a
+                >
+              </div>
+            </section>
+          </div>
+          <div role="tabpanel" class="tab-pane active" id="tab-2">
+            <section id="results-section">
+              <div
+                class="container"
+                id="post-container"
+                style="height: 100%; background: #e3e3e3; width: 75%"
+              >
+                <div class="row d-flex justify-content-left" id="profile-row">
+                  <img
+                    id="profile-picture-3"
+                    style="
+                      margin: 10px;
+                      text-align: left;
+                      width: 80px;
+                      height: 80px;
+                    "
+                    src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_%28Anime%29_character_image.png/revision/latest?cb=20190327163909"
+                  /><a
+                    id="profile-link-3"
+                    href="#"
+                    style="margin: 30px; font-size: 30px"
+                    >Eren Yeager</a
+                  >
+                </div>
+                <div class="row" id="post-row">
+                  <div class="col">
+                    <h1 class="title">Sasageyo!</h1>
+                    <p id="post-caption" style="font-size: 23px">
+                      Tags: Rock, Instrumental
+                    </p>
+                    <p class="post-caption" style="font-size: 23px">
+                      Check out my music!
+                    </p>
+                    <audio
+                      id="post-maincont"
+                      controls
+                      style="width: 100%"
+                      src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
+                    ></audio>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tab-3">
+            <section id="results-section-1">
+              <div
+                class="container"
+                id="post-container-1"
+                style="height: 100%; background: #e3e3e3; width: 75%"
+              >
+                <div class="row d-flex justify-content-left" id="profile-row-1">
+                  <img
+                    id="profile-picture-4"
+                    style="
+                      margin: 10px;
+                      text-align: left;
+                      width: 80px;
+                      height: 80px;
+                    "
+                    src="https://vignette.wikia.nocookie.net/shingekinokyojin/images/a/a1/Eren_Jaeger_%28Anime%29_character_image.png/revision/latest?cb=20190327163909"
+                  /><a
+                    id="profile-link-4"
+                    href="#"
+                    style="margin: 30px; font-size: 30px"
+                    >Eren Yeager</a
+                  >
+                </div>
+                <div class="row" id="post-row-1">
+                  <div class="col">
+                    <h1 class="title">Sasageyo!</h1>
+                    <p class="post-caption" style="font-size: 23px">
+                      Check out my music!
+                    </p>
+                    <audio
+                      class="post-maincont"
+                      controls
+                      style="width: 100%"
+                      src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3"
+                    ></audio>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <%- include("./partials/search-script") %>
+    <script>
+      $(document).ready(function (event) {
+          var searchName = $("#search-input");
+
+          $.ajax({
+            url: '/load-search',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ searchName: searchName.val() }),
+            success: function (response) {
+              var searchList = $('#search-list');
+              var body = $('#body');
+              var n = 0;
+              console.log(response)
+              Object.keys(response.user).forEach(function (user) {
+                console.log(response.user[n].username)
+                searchList.append('<li>\
+                            <div class= "nearly-pepls">\
+                                  <figure>\
+                                    <a href="time-line.html" title=""><img src="assets/images/resources/nearly5.jpg" alt="" /></a>\
+                                  </figure>\
+                                  <div class="pepl-info">\
+                                    <h4><a href="time-line.html" title="">' + response.user[n].username + '</a></h4>\
+                                  </div>\
+                                </div>\
+                              </li>' )
+              })
+            }
+          })
+        })
+    </script>
+  </body>
+</html>

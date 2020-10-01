@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>MusiConnect</title>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png" type="image/png" sizes="16x16" />
+
+    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/color.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+    <!--<div class="se-pre-con"></div>-->
+    <div class="theme-layout">
+        <div class="container-fluid pdng0">
+            <div class="row merged">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="land-featurearea">
+                        <div class="land-meta">
+                            <h1>MusiConnect</h1>
+                            <p>Connecting people through Music.</p>
+                            <img style="height: 300px;"
+                                src="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="login-reg-bg">
+                        <div class="log-reg-area sign">
+                        <div class="log-reg-area reg">
+                            <h2 class="log-title">Register</h2>
+
+                            <%- include("./partials/login-error-message.ejs") %>
+
+                            <form action="register" method="post">
+                                <div class="form-group">
+                                    <input type="text" required="required" name="firstName" />
+                                    <label class="control-label" for="input">First Name</label><i
+                                        class="mtrl-select"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" required="required" name="lastName" />
+                                    <label class="control-label" for="input">Last Name</label><i
+                                        class="mtrl-select"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" required="required" name="username" />
+                                    <label class="control-label" for="input">User Name</label><i
+                                        class="mtrl-select"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" required="required" name="password" />
+                                    <label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" required="required" name="email" />
+                                    <label class="control-label" for="input">Email</label><i class="mtrl-select"></i>
+                                </div>
+
+                                <a href="login" title="" class="already-have">Already have an account</a>
+                                <div class="submit-btns">
+                                    <button class="mtr-btn signup" type="submit" style="background-color: #f6aa1c; border: none;"><span>Register</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

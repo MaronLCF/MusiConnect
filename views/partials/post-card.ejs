@@ -1,0 +1,70 @@
+<div class="central-meta item" id="post-card">
+  <div class="user-post">
+    <div class="friend-info">
+      <div class="friend-name">
+        <ins><a href="time-line.html" title="">post.author</a></ins>
+        <span>post.datePosted</span>
+      </div>
+      <div class="post-meta">
+        <img src="assets/images/resources/user-post.jpg" alt="" />
+        <div class="audio">
+          <audio id="music" preload="true">
+            <source src="https://bachataurban.com/download/2/Stefflon%20Don%20-%2016%20Shots%20(%20DJ%20Flam%20-%20Urban%20Bachata%20remix%20).mp3" />
+          </audio>
+          <div id="audioplayer" style="margin-top: 10px">
+            <i id="pButton" class="ti-control-play"></i>
+            <div id="timeline" class="timeline-post">
+              <div id="playhead"></div>
+            </div>
+          </div>
+        </div>
+        <div class="we-video-info">
+          <div class="description">
+            <p>
+              <a href="#" title="" style="font-size: large;">post.title</a> post.description
+            </p>
+          </div>
+          <ul>
+            <li>
+              <span class="like" data-toggle="tooltip" title="Favorite">
+                <i class="ti-heart"></i>
+                <ins>post.favoriteCount</ins>
+              </span>
+            </li>
+            <li>
+              <span class="comment" data-toggle="tooltip" title="Comments">
+                <i class="fa fa-comments-o"></i>
+                <ins></ins>
+              </span>
+            </li>
+            <li>
+              <span class="dislike" data-toggle="tooltip" title="Add to Playlist">
+                <i class="ti-plus"></i>
+                <ins></ins>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="coment-area">
+      <ul class="we-comet">
+        <%- include("./post-comments") %>
+        <li>
+          <a href="#" title="" class="showmore underline">more comments</a>
+        </li>
+        <li class="post-comment">
+          <div class="comet-avatar">
+            <img src="assets/images/resources/comet-1.jpg" alt="" />
+          </div>
+          <div class="post-comt-box">
+            <form method="post">
+              <textarea placeholder="Post your comment"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

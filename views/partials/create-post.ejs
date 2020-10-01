@@ -1,0 +1,24 @@
+<form method="post"  id="create-form" action="create-post" enctype="multipart/form-data">
+    <textarea rows="1" placeholder="Title" id="create-title" name="title"></textarea>
+    <textarea rows="2" placeholder="description" id="create-description" name="description"></textarea>
+
+    <div class="attachments">
+        <ul>
+            <li>
+                <i class="fa fa-music"></i>
+                <label class="fileContainer">
+                    <input type="file" id="upload-music-file" name="musicFile"/>
+                </label>
+            </li>
+            <li>
+                <i class="fa fa-image"></i>
+                <label class="fileContainer">
+                    <input type="file" id="upload-image-file" name="imageFile" />
+                </label>
+            </li>
+            <li>
+                <button type="submit" id="createPostButton">Post</button>
+            </li>
+        </ul>
+    </div>
+</form>

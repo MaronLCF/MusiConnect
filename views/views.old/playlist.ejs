@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>MusiConnect_playlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/playlist_styles.css" />
+    <link rel="stylesheet" href="assets/css/home_styles.css" />
+  </head>
+
+  <body>
+    <%- include("./partials/navbar") %>
+    <div style="height: 100vh; width: 100%; color: rgb(0, 0, 0)">
+      <div class="row" style="margin: 0px; height: 100%">
+        <div class="col" style="padding: 0px; max-width: 15%; width: 192px">
+          <section style="max-width: 100%; height: 100%; border-color: rgb(225, 60, 60); background: #f5e8c8">
+            <h2
+              class="text-center"
+              id="playlist-header"
+              style="color: rgb(0, 0, 0); font-size: 30px; padding: 10px 0px; margin: 0px; background: #4ecdc4"
+            >
+              Playlists
+            </h2>
+            <div id="all-collapse">
+              <a
+                class="btn btn-primary"
+                data-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="collapse-1"
+                href="#collapse-1"
+                role="button"
+                style="text-align: center; width: 100%; background: #ecdbb2; border-color: rgba(255, 255, 255, 0); color: rgb(0, 0, 0)"
+                >All</a
+              >
+              <div class="collapse" id="collapse-1" style="padding: 10px auto; margin: 10px auto">
+                
+              </div>
+            </div>
+            <div id="following-collapse">
+              <a
+                class="btn btn-primary"
+                data-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="collapse-2"
+                href="#collapse-2"
+                role="button"
+                style="text-align: center; width: 100%; background: #ecdbb2; border-color: rgba(255, 255, 255, 0); color: rgb(0, 0, 0)"
+                >Following</a
+              >
+              <div class="collapse" id="collapse-2" style="padding: 10px auto; margin: 10px auto"><%- include("./partials/playlists_item") %></div>
+            </div>
+            <div id="myplaylists-collapse">
+              <a
+                class="btn btn-primary"
+                data-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="collapse-3"
+                href="#collapse-3"
+                role="button"
+                style="text-align: center; width: 100%; background: #ecdbb2; border-color: rgba(255, 255, 255, 0); color: rgb(0, 0, 0)"
+                >My Playlists</a
+              >
+              <div class="collapse" id="collapse-3" style="padding: 10px auto; margin: 10px auto"><%- include("./partials/playlists_item") %></div>
+            </div>
+          </section>
+        </div>
+        <div class="col" style="padding: 0px; max-width: 85%">
+          <div id="playlist-container" style="height: 100%; width: 100%; padding: 30px 30px"><%- include("./partials/song_item") %></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

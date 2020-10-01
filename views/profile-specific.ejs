@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>MusiConnect</title>
+    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png" type="image/png" sizes="16x16" />
+
+    <link rel="stylesheet" href="/assets/css/main.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/color.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/song-card.css" />
+  </head>
+  <body>
+    <div class="topbar stick">
+      <div class="logo">
+        <a title="" href="newsfeed.html" style><img
+            src="https://cdn3.iconfinder.com/data/icons/ringtone-music-instruments/512/letter-m-key-keyboard-3-512.png"
+            style="height: 50px; width: 50px" /><span style="margin-left: 10px">MusiConnect</span></a>
+      </div>
+    
+      <div class="top-area">
+        <ul class="main-menu">
+          <li>
+            <a href="/home" title="" style="margin-left: -25px">Home</a>
+          </li>
+          <li>
+            <a href="/profile" title="">Profile</a>
+          </li>
+          <li>
+            <a href="/playlists" title="">playlists</a>
+          </li>
+        </ul>
+        <ul class="">
+          <li>
+            <form method="post" class="form-inline ml-auto" id="search-form" action="search">
+              <div class="md-form my-0">
+                <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="search-input"
+                  name="search" />
+              </div>
+              <button class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit" id="search-button">Search</button>
+            </form>
+          </li>
+        </ul>
+        <div class="user-img">
+          <img src="/photo/<%=currentUser%>" alt="" style="height: 50px;" />
+        </div>
+        <ul>
+          <li>
+            <a href="/logout" title="">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- topbar -->
+
+    <section>
+      <!-- Start of profile-->
+      <div class="feature-photo">
+        <figure><img src="/cover-photo/<%=user._id%>" alt="" /></figure>
+        <!-- <div class="add-btn">
+    				<span>1205 followers</span>
+    				<a href="#" title="" data-ripple="">Add Friend</a>
+    			</div> -->
+        <div class="container-fluid">
+          <div class="row merged">
+            <div class="col-lg-2 col-sm-3">
+              <div class="user-avatar">
+                <figure>
+                  <img src="/photo/<%=user._id%>" alt="" />
+                </figure>
+              </div>
+            </div>
+            <div class="col-lg-10 col-sm-9">
+              <div class="timeline-info">
+                <ul>
+                  <li class="admin-name">
+                    <h5> <%= user.username %> </h5>
+                  </li>
+                  <li>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="gap gray-bg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row" id="page-contents">
+                <div class="col-lg-3">
+                  <aside class="sidebar static">
+                    <div class="widget stick-widget">
+                      <h4 class="widget-title">About</h4>
+                      <ul class="naves">
+                        <li>
+                          <i class="ti-info-alt"></i>
+                          <span>Name: </span> <span><%= user.firstName%> <%= user.lastName%></span>
+                        </li>
+                        <li>
+                          <i class="ti-email"></i>
+                          <span>Email: </span> <span><%= user.email%></span>
+                        </li>
+                        <li>
+                          <i class="ti-clipboard"></i>
+                          <span>Birthday: </span>
+                          <span>
+                            <% if (user.birthday) {var month = ((user.birthday).getMonth() + 1);  var day = ((user.birthday) .getDate()); var year = ((user.birthday) .getFullYear());} else{ var month = ""; var day=""; var year=""}%><%=month + "/" + day + "/" + year%>
+                          </span>
+                        </li>
+                        <li>
+                          <i class="ti-user"></i>
+                          <span>Gender: </span> <span><%= user.gender%></span>
+                        </li>
+                        <li>
+                          <i class="ti-location-pin"></i>
+                          <span>Location: </span> <span><%= user.city%></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Shortcuts -->
+                  </aside>
+                </div>
+                <!-- sidebar -->
+                
+                <div class="col-lg-6"><div id="post-cards">
+                
+                </div></div>
+                <!-- centerl meta -->
+                <div class="col-lg-3">
+                  <aside class="sidebar static">
+                    <!-- favorite playlist sidebar -->
+                    <div class="widget friend-list stick-widget">
+                      <h4 class="widget-title">Playlist</h4>
+                      <ul id="play-list" class="playz-list">
+                      </ul>
+                    </div>
+                  </aside>
+                </div>
+                
+                <!-- sidebar -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="id-holder" data-id="<%= user._id%>">
+      </div>
+    </section>
+
+    <!-- side panel -->
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+    <script>
+      $(function () {
+          $(document).ready(function () {
+            var id = $("#id-holder").data("id")
+            
+            $.ajax({
+              url: '/load-playlist/' + id,
+              contentType: 'application/json',
+              success: function (response) {
+                var sidebar = $('#play-list');
+                console.log(response.user[0].playlists)
+                sidebar.html("");
+
+
+                var n = 0;
+                response.user[0].playlists.forEach(function (post) {
+                  var strDate = post.createdAt;
+
+                  sidebar.append('<li>\
+                  <figure>\
+                  <img src = "/post-photo/' + post.photo + '"  alt = "" style="height: 50px; width: 50px;"/>\
+                  </figure >\
+                  <div class= "playz-meta">\
+                  <a href="">' + post.title + ' by ' + post.author + '</a>\
+                  </div >\
+                  </li >'
+                  )
+                  n++
+                })
+
+              }
+            })
+            
+          $.ajax({
+            url: '/load-other-profile-posts/' + id,
+            contentType: 'application/json',
+            success: function (response) {
+              var postCard = $('#post-cards');
+
+              postCard.html("");
+
+              var n = 0;
+              response.posts.forEach(function (post) {
+                var strDate = post.createdAt;
+
+                postCard.append('<div class="central-meta item" id="post-card"><div class= "user-post"><div class="friend-info"><div class="friend-name"><ins><a href="time-line.html" title="">' + post.author + ' </a></ins>\
+              <span>' + strDate.substring(0, 10) + '</div><div class= "post-meta"><img src="/post-photo/' + post.photo + '" alt="" />\
+                <div class="audio">\
+                    <audio id="music_'+ n + '" controls preload="true" class="musicname" style="width: 100%;">\
+                      <source data-id="' + post.musicLink + '"src="/post-music/' + post.musicLink + '"/>\
+                    </audio>\ <div class="we-video-info"><div class="description"><p><a href="#" title="" style="font-size: large; margin-right: 10px;">' + post.title + '</a>' + post.description + '</p></div ><ul><li><span class="dislike" data-toggle="tooltip" title="Add to Playlist"><i  data-id="' + post._id + '" data-author="' + post.author + '" data-photo="' + post.photo + '" data-musicLink="' + post.musicLink + '" data-title="' + post.title + '" data-description="' + post.description + '" class="addPlaylist ti-plus"></i><ins>Add to Playlist</ins></span></li></ul ></div ></div ></div >'
+                )
+                n++
+              })
+
+              $(".likePost").click(function () {
+                $(this).toggleClass('far fa-heart');
+                $(this).toggleClass('fas fa-heart');
+              });
+
+
+
+              $('.addPlaylist').click(function () {
+                console.log("yes")
+                var postID = $(this).attr("data-id");
+                var author = $(this).attr("data-author");
+                var photo = $(this).attr("data-photo");
+                var music = $(this).attr("data-musicLink");
+                var title = $(this).attr("data-title");
+                var description = $(this).attr("data-description");
+
+                $.ajax({
+                  url: '/add-to-Playlist',
+                  method: "POST",
+                  contentType: 'application/json',
+                  data: JSON.stringify({ postID: postID, author: author, photo: photo, music: music, title: title, description: description }),
+                  success: function (data) {
+                    alert(data);
+                  }
+                })
+              });
+
+
+            }
+          })
+        })
+      })
+      
+    </script>
+  </body>
+</html>

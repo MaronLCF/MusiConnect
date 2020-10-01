@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>MusiConnect_login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/login_styles.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+  </head>
+
+  <body style="color: #ffe66d">
+    <div
+      class="register-photo d-flex align-items-center"
+      style="color: #ffe66d; height: 100vh; padding: 0px 0px"
+    >
+      <div class="form-container">
+        <div class="image-holder"></div>
+        <form action="/login" method="POST" style="background-color: #ffe66d">
+          <h2 class="text-center" style="color: rgb(0, 0, 0)">
+            <strong>Log in </strong>to MusiConnect
+          </h2>
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Username"
+              id="input"
+              required="required"
+              name="username"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              class="form-control"
+              placeholder="Password"
+              type="password"
+              required="required"
+              name="password"
+            />
+          </div>
+          <div class="form-group" style="margin-bottom: 16px">
+            <button
+              class="btn btn-primary btn-block"
+              type="submit"
+              style="
+                border-radius: 100px;
+                background-color: #4ecdc4;
+                border-style: solid;
+                border-color: rgb(0, 0, 0);
+                color: rgb(0, 0, 0);
+                margin-top: 0px;
+              "
+            >
+              <strong>Log In</strong>
+            </button>
+          </div>
+          <p
+            style="
+              text-align: center;
+              margin-bottom: 0px;
+              border-color: rgb(0, 0, 0);
+              color: rgb(0, 0, 0);
+            "
+          >
+            Don't have an account?
+          </p>
+          <div class="form-group">
+            <button
+              onclick="location.href = '/register';"
+              class="btn btn-primary btn-block"
+              type="submit"
+              style="
+                border-radius: 100px;
+                background-color: #4ecdc4;
+                border-style: solid;
+                border-color: rgb(0, 0, 0);
+                color: rgb(0, 0, 0);
+                margin-top: 0px;
+              "
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

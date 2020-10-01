@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>MusiConnect_followers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/following_styles.css" />
+    <link rel="stylesheet" href="/assets/css/home_Navigation-with-Search.css" />
+    <link rel="stylesheet" href="/assets/css/home_styles.css" />
+    <link rel="stylesheet" href="/assets/css/profile_styles.css" />
+  </head>
+
+  <body style="background: rgb(235, 235, 235)">
+    <%- include("./partials/navbar") %> <%- include("./partials/profile_header") %>
+
+    <div class="container-fluid" style="width: 100%; margin-right: 0px; margin-left: 0px; padding-right: 0px; padding-left: 0px; margin-top: 0px">
+      <div class="row" style="width: 100%; height: auto">
+        <div class="col-auto" style="margin-left: 85px; width: 360px; height: 300px; background: #ffffff; border-style: none">
+          <h1 style="font-weight: bold; font-size: 25px; margin-top: 15px; margin-left: 15px">About</h1>
+          <p style="margin-left: 15px; margin-bottom: 5px">Birthdate: 01/01/2000</p>
+          <p style="margin-left: 15px; margin-bottom: 5px">Gender: Male</p>
+          <p style="margin-left: 15px">Location: Manila,&nbsp;Philippines</p>
+        </div>
+        <%- include("./partials/follower_body") %>
+        <div class="col-auto" style="margin-left: 75px; width: 300px; margin-right: 85px; background: #ffffff; border-style: none; height: 350px">
+          <h1 style="font-weight: bold; font-size: 25px; margin-top: 15px; margin-left: 15px; margin-bottom: 25px">Favorites</h1>
+          <div style="margin-bottom: 20px">
+            <span style="width: 140px"
+              ><img src="/assets/img/frank.jpg" style="width: 65px; height: 65px; margin-left: 15px" /><small style="margin-left: 15px"
+                >Happy playlist</small
+              ></span
+            >
+          </div>
+          <div style="margin-bottom: 20px">
+            <span style="width: 140px"
+              ><img src="/assets/img/frank.jpg" style="width: 65px; height: 65px; margin-left: 15px" /><small style="margin-left: 15px"
+                >Sad playlists</small
+              ></span
+            >
+          </div>
+          <div style="margin-bottom: 20px">
+            <span style="width: 140px"
+              ><img src="/assets/img/frank.jpg" style="width: 65px; height: 65px; margin-left: 15px" /><small style="margin-left: 15px"
+                >Hype Songs</small
+              ></span
+            >
+          </div>
+          <a class="card-link" href="/playlists" style="margin-left: 166px; color: #2b9348">View all</a>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
