@@ -1,5 +1,5 @@
 const User = require("../models/users");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const session = require("express-session");
 const express = require("express");
 const LocalStrategy = require("passport-local").Strategy;
@@ -52,7 +52,7 @@ module.exports.register_post = async (req, res) => {
   const { firstName, lastName, username, email, password } = req.body;
 
   try {
-    const password = await bcrypt.hash(req.body.password, 10);
+    const password = await bcryptjs.hash(req.body.password, 10);
     const user = await new User({
       //Media
       profileImage: "4fcd420c534df57ac8c16745e34f5fc6",
