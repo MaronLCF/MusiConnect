@@ -13,7 +13,7 @@
       <i class="ti-clipboard"></i>
       <span>Birthday: </span>
       <span>
-      <% if (user.birthday) {var month = ((user.birthday).getMonth() + 1);  var day = ((user.birthday) .getDate()); var year = ((user.birthday) .getFullYear());} else{ var month = ""; var day=""; var year=""}%><%=month + "/" + day + "/" + year%>
+      <% if (user.birthday) {var month = ((user.birthday).getMonth() + 1);  var day = ((user.birthday) .getDate()); var year = ((user.birthday) .getFullYear());} else{ var month = " "; var day=" "; var year=" "}%><%=month + "/" + day + "/" + year%>
       </span>
     </li>
     <li>
